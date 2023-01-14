@@ -1,0 +1,469 @@
+
+html, body {
+    padding: 0;
+    margin: 0;
+    min-height: 100vh;
+}
+* {
+    box-sizing: border-box;
+}
+
+.progress-bar {
+    width: 100%;
+    background-color: #cacaca;
+}
+    .progress-bar .progress {
+        height: 1vw;
+        text-align: center;
+        background-color: blueviolet;
+        width: 0%;
+        color: #ffffff;
+        transition: ease 0.5s;
+    }
+
+.content-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+    background-color: bisque;
+}
+
+.casa {
+    border: solid 4px #cacaca;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(to bottom right, #095579, #00d4ff);
+    position: relative;
+}
+
+    .status {
+        position: absolute;
+        width: 20vw;
+        padding: 1vw;
+        position: absolute;
+        bottom: 1vw;
+        right: 1vw;
+        background-color: #ffffff;
+        border-radius: 1vw;
+        z-index: 20;
+    }
+
+
+    .toy {
+        cursor: move;
+        padding: 0.4vw;
+        background-color: #ffffff;
+        position: absolute;
+        border-radius: 50%;
+        font-size: 1.5vw;
+        display: flex;
+        box-shadow: 0.1vw 0.1vw 1px 0 #424242;
+        color: green;
+        z-index: 10;
+    }
+
+    .pacote-racao {
+        position: absolute;
+        bottom: 10vw;
+    }
+    .pacote-racao img {
+        width: 5vw;
+    }
+
+    .pote {
+        width: 5.6vw;
+        height: 5.6vw;
+        position: absolute;
+        bottom: 1vw;
+        background-image: radial-gradient(farthest-side at 50% 50%, #CACAC9 30%, #7d7d7d 70%, #9c9c9c 80%, #9c9c9c 85%, #5f5f5f 100%);
+        border-radius: 50%;
+        border: solid 0.1vw #2b2b2b;
+        box-sizing: content-box;
+        left: 1vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .pote .racao {
+        display: none;
+        width: 60%;
+        height: 60%;
+        overflow: hidden;
+        border-radius: 50%;
+    }
+    .pote .racao img {
+        width: 120%;
+        margin-left: -10%;
+        margin-top: -10%;
+    }
+    .pote.cheio .racao {
+        display: block;
+    }
+
+/***********
+ * BONO
+ **********/
+/* Corpo: #a7774f */
+/* Barriga: #dcbb95 */
+/* Cabeça: #784321, #c0905c */
+.bono {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    left: 15vw;
+    top: 15vw;
+    cursor: pointer;
+}
+
+    .bono .cabeca {
+        background-image: radial-gradient(farthest-side at 50% 30%, #784321, #c0905c);
+        width: 6vw;
+        height: 5vw;
+        border-radius: 3vw;
+        position: relative;
+        z-index: 2;
+    }
+
+        @keyframes pisca {
+            0% {
+                height: 0.2vw
+            }
+            5% {
+                height: 2vw
+            }
+        }
+        .bono .cabeca .olho {
+            animation: pisca 1s infinite alternate;
+            overflow: hidden;
+            background-color: #f1a925;
+            width: 2vw;
+            height: 2vw;
+            border-radius: 1vw;
+            position: absolute;
+            bottom: 1.6vw;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: solid 1px #784321;
+        }
+            .bono .cabeca .olho::after {
+                content: '';
+                background-color: black;
+                width: 0.3vw;
+                height: 1.3vw;
+                display: inline-flex;
+                border-radius: 1vw;
+            }
+            .bono .cabeca .olho.esquerdo {
+                left: 0.8vw;
+            }
+            .bono .cabeca .olho.direito {
+                right: 0.8vw;
+            }
+
+        .bono .cabeca .nariz {
+            border-top: 0.8vw solid #824e29;
+            border-right: 0.8vw solid transparent;
+            border-left: 0.8vw solid transparent;
+            height: 0;
+            position: absolute;
+            left: 2.2vw;
+            top: 3.2vw;
+            width: 0;
+            border-radius: 0.6vw;
+        }
+        .bono .cabeca .focinho {
+            position: absolute;
+            top: 4.2vw;
+            left: 2.2vw;
+            display: flex;    
+        }
+            .bono .cabeca .focinho .bochecha {
+                background-color: #dbba94;
+                width: 1vw;
+                height: 0.5vw;
+            }
+            .bono .cabeca .focinho .bochecha.esquerda {
+                transform: rotate(-30deg);
+                border-radius: 70% 30%;
+                margin-right: -0.2vw;
+            }
+            .bono .cabeca .focinho .bochecha.direita {
+                transform: rotate(30deg);
+                border-radius: 30% 70%;
+                margin-left: -0.2vw;
+            }
+            .bono .cabeca .focinho .boca {
+                width: 1vw;
+                position: absolute;
+                height: 0.1vw;
+                background: #f38aa7;
+                border-radius: 50%;
+                left: 0.3vw;
+                top: 0.2vw;
+                border: solid 1px #824e29;
+                display: none;
+            }
+
+    .bono .orelha {
+        width: 2vw;
+        height: 2vw;
+        border-radius: 80% 15% 55% 50% / 55% 15% 80% 50%;
+        transform: rotate(-45deg);
+        background: #dcbb95;
+        position: absolute;
+        top: -0.8vw;
+        box-shadow: inset 0px 0px 9px 0px #4a240a;
+        border: solid 1px #7e4926;
+    }
+        .bono .orelha.esquerda {
+            left:1.2vw;
+        }
+        .bono .orelha.direita {
+            right:1.2vw;
+            transform: rotate(35deg);
+        }
+
+
+    .bono .corpo {
+        width: 8vw;
+        height: 8vw;
+        background-color: #dab993;
+        border-radius: 80% 80% 40% 40% / 120% 120% 30% 30%;
+        margin-top: -1vw;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: center;
+        box-shadow: inset 0 0 1vw 0 #784321;
+        z-index: 1;
+    }
+        .bono .corpo .barriga {
+            width: 6vw;
+            height: 6vw;
+            background-color: #e8dbcd;
+            border-radius: 80% 80% 40% 40% / 120% 120% 30% 30%;
+            box-shadow: inset 0 0 2vw 0 #c59f7a;
+            margin-bottom: 0.2vw;
+        }
+
+
+    @keyframes rabo {
+        0% {
+            left: -3vw;
+            transform: rotate(6deg);
+        }
+        30% {
+            left: 5vw;
+            transform: rotate(-6deg);
+        }
+    }
+    .bono .rabo {
+        animation: rabo alternate infinite 3s;
+        width: 6vw;
+        height: 1vw;
+        background-color: #c59f7a;
+        border-radius: 0.5vw;
+        margin-top: -1vw;
+        left: 5vw;
+        position: absolute;
+        bottom: 0.5vw;
+        transform: rotate(-6deg);
+    }
+
+
+
+    .bono .balao {
+        width: 8vw;
+        height: 5vw;
+        background-color: #ffffff;
+        position: absolute;
+        top: -6vw;
+        left: 100%;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        display: none;
+    }
+        .bono .balao .mensagem {
+            font-size: 2.5vw;
+            color: #ef2548;
+        }
+            .bono .balao .mensagem i::before {
+                content: "";
+            }
+        .bono .balao .conexao {
+            border-left: solid 0.6vw transparent;
+            border-right: solid 0.6vw transparent;
+            border-top: solid 3vw #ffffff;
+            position: absolute;
+            bottom: -1vw;
+            left: 0;
+            transform: rotate(45deg);
+        }
+
+
+    /***********
+     * ESTADOS *
+     ***********/
+     .bono.calmo {
+        transition: all 2s ease-out;
+    }
+    
+    .bono.agitado { transition: all 1s ease-out; }
+        .bono.agitado .cabeca .olho::after { width: 1.3vw }
+        .bono.agitado .rabo { animation: rabo alternate infinite 1s; }
+
+    .bono.puto {
+        transition: all 0.5s ease-out;
+    }
+    /******************
+     * COMPORTAMENTOS *
+     ******************/
+     @keyframes carinho_focinho {
+        50% {
+            height: 0.7vw;
+        }
+        100% {
+            height: 0.1vw;
+        }
+    }
+
+        /* Fome */
+        @keyframes fome {
+            0% {
+                font-size: 3vw;
+            }
+            50% {
+                font-size: 2.5vw;
+            }
+            100% {
+                font-size: 3vw;
+            }
+        }    
+        .bono.fome .balao {
+            display: flex;
+        }
+        .bono.fome .balao .mensagem {
+            animation: fome infinite alternate 1s;
+            transform: rotate(30deg);
+        }
+        .bono.fome .balao .mensagem i::before {
+            content: "\f0f5"
+        }
+
+        .bono.comendo .corpo {
+            margin-top: -5vw;
+        }
+        .bono.comendo .cabeca .olho {
+            animation: none;
+            height: 0.2vw;
+            bottom: 2vw;
+            background-color: #784321;
+        }
+            .bono.comendo .cabeca .olho::after {
+                display: none;
+            }
+            .bono.comendo .cabeca .olho.esquerdo {
+                transform: rotate(15deg);
+            }
+            .bono.comendo .cabeca .olho.direito {
+                transform: rotate(-15deg);        
+            }
+        .bono.comendo .cabeca .focinho .boca {
+            display: block;
+            animation: carinho_focinho infinite alternate 2s;
+        }
+    
+        /* Carinho */
+        @keyframes carinho_mensagem {
+            0% {
+                transform: rotate(-15deg);
+                margin-left: -0.5vw;
+                margin-top: -0.5vw;
+            }
+            33% {
+                transform: rotate(15deg);
+                margin-left: 0.5vw;
+                margin-top: -0.5vw;
+            }
+            66% {
+                transform: rotate(-15deg);
+                margin-left: -0.5vw;
+                margin-top: 0.5vw;
+            }
+            100% {
+                transform: rotate(15deg);
+                margin-left: 0.5vw;
+                margin-top: 0.5vw;
+            }
+        }
+
+        .bono.carinho .cabeca .olho {
+            animation: none;
+            height: 0.2vw;
+            bottom: 2vw;
+        }
+        .bono.carinho .cabeca .focinho .boca {
+            display: block;
+            animation: carinho_focinho infinite alternate 2s;
+        }
+        .bono.carinho .balao {
+            display: flex;
+        }
+        .bono.carinho .balao .mensagem {
+            animation: carinho_mensagem infinite alternate 1s;
+        }
+        .bono.carinho .balao .mensagem i::before {
+            content: "\f001";
+        }
+
+        /* Dormindo */
+        @keyframes zzz {
+            50% {
+                transform: rotate(-60deg);
+            }
+            100% {
+                transform: rotate(180deg);
+                opacity: 0;
+            }
+        }    
+        .bono.dormindo .corpo {
+            margin-top: -5vw;
+        }
+        .bono.dormindo .cabeca .olho {
+            animation: none;
+            height: 0.2vw;
+            bottom: 2vw;
+            background-color: #784321;
+        }
+        .bono.dormindo .cabeca .olho::after {
+            display: none;
+        }
+        .bono.dormindo .cabeca .olho.esquerdo {
+            transform: rotate(15deg);
+        }
+        .bono.dormindo .cabeca .olho.direito {
+            transform: rotate(-15deg);        
+        }
+
+        .bono.dormindo .rabo {
+            animation: none;
+        }
+
+        .bono.dormindo .balao .mensagem {
+            animation: zzz infinite 3s;
+        }
+        .bono.dormindo .balao .mensagem i::before {
+            content: "Z";
+        }
+
+
+
+@media only screen and (max-width: 760px) {
+
+}

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bono Virtual</title>
+
+    <!-- Importando o estilo CSS -->
+    <link rel="stylesheet" href="css/styles.css" />
+
+    <link rel="stylesheet" href="css/font-awesome-4.7.0/css/font-awesome.min.css" />
+</head>
+<body onload="onLoad()">
+    <div class="content-wrapper">
+        <div class="casa">
+            <div id="bono" class="bono calmo">
+                <div class="orelha esquerda"></div>
+                <div class="orelha direita"></div>
+                <div class="cabeca">
+                    <div class="olho esquerdo"></div>
+                    <div class="olho direito"></div>
+                    <div class="nariz"></div>
+                    <div class="focinho">
+                        <div class="boca"></div>
+                        <div class="bochecha esquerda"></div>
+                        <div class="bochecha direita"></div>
+                    </div>
+                </div>
+                <div class="corpo">
+                    <div class="barriga"></div>
+                </div>
+                <div class="rabo"></div>
+                <div class="balao">
+                    <div class="mensagem">
+                        <i class="fa"></i>
+                    </div>
+                    <div class="conexao">
+
+                    </div>
+                </div>
+            </div>
+            <div class="toy" style="left: 1vw; top: 1vw;">
+                <i class="fa fa-bug"></i>
+            </div>
+            <div class="toy" style="left: 5vw; top: 1vw;">
+                <i class="fa fa-life-ring"></i>
+            </div>
+            <div class="pacote-racao" draggable="true">
+                <img src="images/racao.png" />
+            </div>
+            <div id="pote-racao" class="pote">
+                <div class="racao"><img src="images/racao.jpg" /></div>
+            </div>
+            <div class="status row">
+                <div class="col">
+                    <label for="">Fome:</label>
+                    <div class="progress-bar">
+                        <div id="fome-progress" class="progress" >0%</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Importando o javascript -->
+    <script src="js/main.js?v1.1"></script>
+</body>
+</html>
