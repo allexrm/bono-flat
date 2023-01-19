@@ -7,9 +7,3 @@
 3) Pegando o saco de ração: Vai pra perto do pote de ração, fica "miando" pedindo comida
 4) Colocando comida: Vai pra cima do pote de ração e fica lá um tempo até se alimentar
 5) Passando a mão na barriga: Fica puto e corre pra longe
-
-### Criando a estrutura de arquivos
-### Alterando o título da página
-### Importando script CSS
-### Importando script JS
-### Criando estrutura HTML inicial
