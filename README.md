@@ -1,7 +1,7 @@
 # BONO VIRTUAL
 
 ## Comportamento
-1) Recebendo carinho: Fecha os olhos parcialmente, continua abanando o rabo, faz um barilhinho com a boca.
+1) Recebendo carinho: Fecha os olhos parcialmente, continua abanando o rabo, faz um barulhinho com a boca.
 2) Mexendo no brinquedo: Fica agitado, persegue o brinquedo enquanto o usuário está segurando
 3) Soltando o brinquedo: Fica calmo e se move pra algum lugar
 3) Pegando o saco de ração: Vai pra perto do pote de ração, fica "miando" pedindo comida
