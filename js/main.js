@@ -12,6 +12,7 @@ const area = {
 }
 
 function onLoad(){
+    // Inicia o movimento do Bono Virtual
     move();
 }
 
